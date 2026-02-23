@@ -1,6 +1,5 @@
 package com.heshant.giftshop.entity;
 
-import com.heshant.giftee.entity.Category;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
