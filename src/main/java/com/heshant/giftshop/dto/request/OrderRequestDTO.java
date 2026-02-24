@@ -1,5 +1,6 @@
 package com.heshant.giftshop.dto.request;
 
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,12 +11,15 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderRequestDTO {
-    private Integer userId;
+
+    @NotNull(message = "Address ID is required")
+    @Positive(message = "Address ID must be valid")
     private Integer addressId;
-    private Integer orderStatusId;
+
+    @NotNull(message = "Payment method ID is required")
+    @Positive(message = "Payment method ID must be valid")
     private Integer paymentMethodId;
-    private Double subTotal;
-    private Double totalAmount;
-    private Double deliveryCharge;
+
+    @Size(max = 500, message = "Shipping address snapshot is too long")
     private String shippingAddressSnapshot;
 }
